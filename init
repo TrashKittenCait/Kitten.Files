@@ -1,0 +1,38 @@
+call plug#begin()
+
+
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'mg979/vim-visual-multi'
+Plug 'mattn/emmet-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'hugolgst/vimsence'
+
+call plug#end()
+
+set encoding=UTF-8
+
+syntax on
+set number 
+set mouse=a
+
+set background=dark
+colorscheme palenight
+
+let g:airline_theme = "palenight"
+
+let g:palenight_terminal_italics=1
+
+if(has(""))
+	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-clangd', 'coc-css', 'coc-html', 'coc-java', 'coc-sql', 'coc-spell-checker']
